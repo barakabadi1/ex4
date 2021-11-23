@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		255096722742B49700C87B92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096712742B49700C87B92 /* AppDelegate.m */; };
+		255096752742B49700C87B92 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096742742B49700C87B92 /* SceneDelegate.m */; };
+		255096782742B49700C87B92 /* CardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096772742B49700C87B92 /* CardGameViewController.m */; };
+		2550967B2742B49700C87B92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255096792742B49700C87B92 /* Main.storyboard */; };
+		2550967D2742B49A00C87B92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2550967C2742B49A00C87B92 /* Assets.xcassets */; };
+		255096802742B49A00C87B92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2550967E2742B49A00C87B92 /* LaunchScreen.storyboard */; };
+		255096832742B49A00C87B92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096822742B49A00C87B92 /* main.m */; };
+		2550968D2742B49A00C87B92 /* CardFliperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2550968C2742B49A00C87B92 /* CardFliperTests.m */; };
+		255096972742B49A00C87B92 /* CardFliperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096962742B49A00C87B92 /* CardFliperUITests.m */; };
+		255096992742B49A00C87B92 /* CardFliperUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096982742B49A00C87B92 /* CardFliperUITestsLaunchTests.m */; };
+		255096A92743A95C00C87B92 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096A82743A95C00C87B92 /* Card.m */; };
+		255096B92743B03200C87B92 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096B82743B03200C87B92 /* Deck.m */; };
+		255096BD2743BB1200C87B92 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096BC2743BB1200C87B92 /* PlayingCardDeck.m */; };
+		255096C12743BBE100C87B92 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096C02743BBE100C87B92 /* PlayingCard.m */; };
+		255096C32744019C00C87B92 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096C22744019C00C87B92 /* CardMatchingGame.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		255096892742B49A00C87B92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 255096652742B49700C87B92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2550966C2742B49700C87B92;
+			remoteInfo = CardFliper;
+		};
+		255096932742B49A00C87B92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 255096652742B49700C87B92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2550966C2742B49700C87B92;
+			remoteInfo = CardFliper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2550966D2742B49700C87B92 /* CardFliper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardFliper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		255096702742B49700C87B92 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		255096712742B49700C87B92 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		255096732742B49700C87B92 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		255096742742B49700C87B92 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		255096762742B49700C87B92 /* CardGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardGameViewController.h; sourceTree = "<group>"; };
+		255096772742B49700C87B92 /* CardGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardGameViewController.m; sourceTree = "<group>"; };
+		2550967A2742B49700C87B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2550967C2742B49A00C87B92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2550967F2742B49A00C87B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		255096812742B49A00C87B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		255096822742B49A00C87B92 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		255096882742B49A00C87B92 /* CardFliperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardFliperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2550968C2742B49A00C87B92 /* CardFliperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardFliperTests.m; sourceTree = "<group>"; };
+		255096922742B49A00C87B92 /* CardFliperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardFliperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		255096962742B49A00C87B92 /* CardFliperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardFliperUITests.m; sourceTree = "<group>"; };
+		255096982742B49A00C87B92 /* CardFliperUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardFliperUITestsLaunchTests.m; sourceTree = "<group>"; };
+		255096A82743A95C00C87B92 /* Card.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		255096AA2743A99D00C87B92 /* Card.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		255096B82743B03200C87B92 /* Deck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		255096BA2743B04700C87B92 /* Deck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		255096BC2743BB1200C87B92 /* PlayingCardDeck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		255096BE2743BB2300C87B92 /* PlayingCardDeck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
+		255096BF2743BBD100C87B92 /* PlayingCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayingCard.h; sourceTree = "<group>"; };
+		255096C02743BBE100C87B92 /* PlayingCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
+		255096C22744019C00C87B92 /* CardMatchingGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
+		255096C5274401C900C87B92 /* CardMatchingGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2550966A2742B49700C87B92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		255096852742B49A00C87B92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2550968F2742B49A00C87B92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		255096642742B49700C87B92 = {
+			isa = PBXGroup;
+			children = (
+				2550966F2742B49700C87B92 /* CardFliper */,
+				2550968B2742B49A00C87B92 /* CardFliperTests */,
+				255096952742B49A00C87B92 /* CardFliperUITests */,
+				2550966E2742B49700C87B92 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2550966E2742B49700C87B92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2550966D2742B49700C87B92 /* CardFliper.app */,
+				255096882742B49A00C87B92 /* CardFliperTests.xctest */,
+				255096922742B49A00C87B92 /* CardFliperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2550966F2742B49700C87B92 /* CardFliper */ = {
+			isa = PBXGroup;
+			children = (
+				255096A52743A8E800C87B92 /* model */,
+				255096702742B49700C87B92 /* AppDelegate.h */,
+				255096712742B49700C87B92 /* AppDelegate.m */,
+				255096732742B49700C87B92 /* SceneDelegate.h */,
+				255096742742B49700C87B92 /* SceneDelegate.m */,
+				255096762742B49700C87B92 /* CardGameViewController.h */,
+				255096772742B49700C87B92 /* CardGameViewController.m */,
+				255096792742B49700C87B92 /* Main.storyboard */,
+				2550967C2742B49A00C87B92 /* Assets.xcassets */,
+				2550967E2742B49A00C87B92 /* LaunchScreen.storyboard */,
+				255096812742B49A00C87B92 /* Info.plist */,
+				255096822742B49A00C87B92 /* main.m */,
+			);
+			path = CardFliper;
+			sourceTree = "<group>";
+		};
+		2550968B2742B49A00C87B92 /* CardFliperTests */ = {
+			isa = PBXGroup;
+			children = (
+				2550968C2742B49A00C87B92 /* CardFliperTests.m */,
+			);
+			path = CardFliperTests;
+			sourceTree = "<group>";
+		};
+		255096952742B49A00C87B92 /* CardFliperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				255096962742B49A00C87B92 /* CardFliperUITests.m */,
+				255096982742B49A00C87B92 /* CardFliperUITestsLaunchTests.m */,
+			);
+			path = CardFliperUITests;
+			sourceTree = "<group>";
+		};
+		255096A52743A8E800C87B92 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				255096A82743A95C00C87B92 /* Card.m */,
+				255096AA2743A99D00C87B92 /* Card.h */,
+				255096B82743B03200C87B92 /* Deck.m */,
+				255096BA2743B04700C87B92 /* Deck.h */,
+				255096BC2743BB1200C87B92 /* PlayingCardDeck.m */,
+				255096BE2743BB2300C87B92 /* PlayingCardDeck.h */,
+				255096BF2743BBD100C87B92 /* PlayingCard.h */,
+				255096C02743BBE100C87B92 /* PlayingCard.m */,
+				255096C22744019C00C87B92 /* CardMatchingGame.m */,
+				255096C5274401C900C87B92 /* CardMatchingGame.h */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2550966C2742B49700C87B92 /* CardFliper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2550969C2742B49A00C87B92 /* Build configuration list for PBXNativeTarget "CardFliper" */;
+			buildPhases = (
+				255096692742B49700C87B92 /* Sources */,
+				2550966A2742B49700C87B92 /* Frameworks */,
+				2550966B2742B49700C87B92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardFliper;
+			productName = CardFliper;
+			productReference = 2550966D2742B49700C87B92 /* CardFliper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		255096872742B49A00C87B92 /* CardFliperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2550969F2742B49A00C87B92 /* Build configuration list for PBXNativeTarget "CardFliperTests" */;
+			buildPhases = (
+				255096842742B49A00C87B92 /* Sources */,
+				255096852742B49A00C87B92 /* Frameworks */,
+				255096862742B49A00C87B92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2550968A2742B49A00C87B92 /* PBXTargetDependency */,
+			);
+			name = CardFliperTests;
+			productName = CardFliperTests;
+			productReference = 255096882742B49A00C87B92 /* CardFliperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		255096912742B49A00C87B92 /* CardFliperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 255096A22742B49A00C87B92 /* Build configuration list for PBXNativeTarget "CardFliperUITests" */;
+			buildPhases = (
+				2550968E2742B49A00C87B92 /* Sources */,
+				2550968F2742B49A00C87B92 /* Frameworks */,
+				255096902742B49A00C87B92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				255096942742B49A00C87B92 /* PBXTargetDependency */,
+			);
+			name = CardFliperUITests;
+			productName = CardFliperUITests;
+			productReference = 255096922742B49A00C87B92 /* CardFliperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		255096652742B49700C87B92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					2550966C2742B49700C87B92 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					255096872742B49A00C87B92 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 2550966C2742B49700C87B92;
+					};
+					255096912742B49A00C87B92 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 2550966C2742B49700C87B92;
+					};
+				};
+			};
+			buildConfigurationList = 255096682742B49700C87B92 /* Build configuration list for PBXProject "CardFliper" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 255096642742B49700C87B92;
+			productRefGroup = 2550966E2742B49700C87B92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2550966C2742B49700C87B92 /* CardFliper */,
+				255096872742B49A00C87B92 /* CardFliperTests */,
+				255096912742B49A00C87B92 /* CardFliperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2550966B2742B49700C87B92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				255096802742B49A00C87B92 /* LaunchScreen.storyboard in Resources */,
+				2550967D2742B49A00C87B92 /* Assets.xcassets in Resources */,
+				2550967B2742B49700C87B92 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		255096862742B49A00C87B92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		255096902742B49A00C87B92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		255096692742B49700C87B92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				255096A92743A95C00C87B92 /* Card.m in Sources */,
+				255096782742B49700C87B92 /* CardGameViewController.m in Sources */,
+				255096722742B49700C87B92 /* AppDelegate.m in Sources */,
+				255096C32744019C00C87B92 /* CardMatchingGame.m in Sources */,
+				255096832742B49A00C87B92 /* main.m in Sources */,
+				255096BD2743BB1200C87B92 /* PlayingCardDeck.m in Sources */,
+				255096B92743B03200C87B92 /* Deck.m in Sources */,
+				255096C12743BBE100C87B92 /* PlayingCard.m in Sources */,
+				255096752742B49700C87B92 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		255096842742B49A00C87B92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2550968D2742B49A00C87B92 /* CardFliperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2550968E2742B49A00C87B92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				255096992742B49A00C87B92 /* CardFliperUITestsLaunchTests.m in Sources */,
+				255096972742B49A00C87B92 /* CardFliperUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2550968A2742B49A00C87B92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2550966C2742B49700C87B92 /* CardFliper */;
+			targetProxy = 255096892742B49A00C87B92 /* PBXContainerItemProxy */;
+		};
+		255096942742B49A00C87B92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2550966C2742B49700C87B92 /* CardFliper */;
+			targetProxy = 255096932742B49A00C87B92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		255096792742B49700C87B92 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2550967A2742B49700C87B92 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2550967E2742B49A00C87B92 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2550967F2742B49A00C87B92 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2550969A2742B49A00C87B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2550969B2742B49A00C87B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2550969D2742B49A00C87B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3VV32PYGHP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CardFliper/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lightricks.bootcamp.CardFliper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2550969E2742B49A00C87B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3VV32PYGHP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CardFliper/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lightricks.bootcamp.CardFliper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		255096A02742B49A00C87B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3VV32PYGHP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lightricks.bootcamp.CardFliperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardFliper.app/CardFliper";
+			};
+			name = Debug;
+		};
+		255096A12742B49A00C87B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3VV32PYGHP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lightricks.bootcamp.CardFliperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardFliper.app/CardFliper";
+			};
+			name = Release;
+		};
+		255096A32742B49A00C87B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3VV32PYGHP;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lightricks.bootcamp.CardFliperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CardFliper;
+			};
+			name = Debug;
+		};
+		255096A42742B49A00C87B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3VV32PYGHP;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lightricks.bootcamp.CardFliperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CardFliper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		255096682742B49700C87B92 /* Build configuration list for PBXProject "CardFliper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2550969A2742B49A00C87B92 /* Debug */,
+				2550969B2742B49A00C87B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2550969C2742B49A00C87B92 /* Build configuration list for PBXNativeTarget "CardFliper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2550969D2742B49A00C87B92 /* Debug */,
+				2550969E2742B49A00C87B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2550969F2742B49A00C87B92 /* Build configuration list for PBXNativeTarget "CardFliperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				255096A02742B49A00C87B92 /* Debug */,
+				255096A12742B49A00C87B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		255096A22742B49A00C87B92 /* Build configuration list for PBXNativeTarget "CardFliperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				255096A32742B49A00C87B92 /* Debug */,
+				255096A42742B49A00C87B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 255096652742B49700C87B92 /* Project object */;
+}
