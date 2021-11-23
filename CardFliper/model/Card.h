@@ -6,6 +6,6 @@
 @property (nonatomic) BOOL chosen;
 @property (nonatomic) BOOL matched;
 
-- (int)match:(NSArray *)otherCards;
+- (int) match:(NSArray *)otherCards;
 
 @end

@@ -65,7 +65,7 @@ static const int COST_TO_CHOOSE = 1;
         if (card.chosen) {
             card.chosen=NO;
             _numOfChosen--;
-            actionString = [NSString stringWithFormat:@"fliped %@ back",card.contents];
+            actionString = [NSString stringWithFormat:@"Unchoose %@",card.contents];
         }else if(_numOfChosen == _matchMode-1){ //if we chose full group
             for(Card *otherCard in self.cards){ //find the chosen cards
                 if (otherCard.chosen && !otherCard.matched) {
