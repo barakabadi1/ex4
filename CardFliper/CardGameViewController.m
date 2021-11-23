@@ -7,7 +7,6 @@
 
 #import "CardGameViewController.h"
 #import "model/Deck.h"
-#import "model/PlayingCardDeck.h"
 #import "model/CardMatchingGame.h"
 
 
@@ -35,7 +34,7 @@
 }
 
 -(Deck *)createDeck{
-    return [[PlayingCardDeck alloc] init];
+    return nil;
 }
 
 - (IBAction)touchGameMode:(UISegmentedControl *)sender {
