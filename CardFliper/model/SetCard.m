@@ -63,4 +63,15 @@
   return  setSize == 1 || setSize == 3;
 }
 
+
+- (NSString *) contents{
+  return [SetCard shapeStrings][self.shape];
+}
+
+
+
++ (NSArray *)shapeStrings{
+  return @[@"■",@"▲",@"●"];
+}
+
 @end

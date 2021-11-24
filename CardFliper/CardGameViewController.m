@@ -30,7 +30,8 @@
 }
 
 -(NSInteger) getMatchMode{
-    return _gameMode.selectedSegmentIndex + 2;
+//    return _gameMode.selectedSegmentIndex + 2;
+  return 2;
 }
 
 -(Deck *)createDeck{
@@ -51,20 +52,20 @@
     for(UIButton *cardButton in self.cardButtons){
         NSUInteger cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardButtonIndex];
-        
+
         [cardButton setTitle:[self titleForCard:card]
                     forState:UIControlStateNormal];
-        
+
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
-        
+
         cardButton.enabled = !card.matched;
-        
+
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
     self.gameMode.enabled = isReset;
 //    self.historySlider.maximumValue = self.game.actionHistory.count;
     self.lastActionLabel.text = isReset? @"Press any card to start the game": [self currentActionString];
-    
+
 }
 
 

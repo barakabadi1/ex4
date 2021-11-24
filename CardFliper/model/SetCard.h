@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSUInteger color;
 @property (nonatomic) NSUInteger shading;
 
++ (NSArray *)shapeStrings;
 @end
 
 NS_ASSUME_NONNULL_END
