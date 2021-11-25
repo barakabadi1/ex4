@@ -25,7 +25,7 @@ static const int SHADING_AMOUNT = 3;
           for (int shading = 0; shading < SHADING_AMOUNT; shading++) {
             SetCard *card = [[SetCard alloc] init];
             card.numOfSymbol = symbol;
-            card.shape = shape;
+            card.shapeIndex = shape;
             card.color = color;
             card.shading = shading;
             [self addCard:card];

@@ -22,9 +22,9 @@
   SetCard *card1 = [otherCards firstObject];
   SetCard *card2 = [otherCards lastObject];
   
-  if ([self isFeatureAllowSetFeature1:[NSNumber numberWithUnsignedInteger:self.shape]
-                             feature2:[NSNumber numberWithUnsignedInteger:card1.shape]
-                            featuree3:[NSNumber numberWithUnsignedInteger:card2.shape]]) {
+  if ([self isFeatureAllowSetFeature1:[NSNumber numberWithUnsignedInteger:self.shapeIndex]
+                             feature2:[NSNumber numberWithUnsignedInteger:card1.shapeIndex]
+                            featuree3:[NSNumber numberWithUnsignedInteger:card2.shapeIndex]]) {
     score++;
   }else{
     return 0;
@@ -65,9 +65,13 @@
 
 
 - (NSString *) contents{
-  return [SetCard shapeStrings][self.shape];
+  return [NSString stringWithFormat:@"%@,%ld,%ld,%ld",[self shape],self.numOfSymbol,self.color,self.shading];
 }
 
+- (NSString *)shape{
+  return [SetCard shapeStrings][self.shapeIndex];
+
+}
 
 
 + (NSArray *)shapeStrings{
