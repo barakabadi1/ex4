@@ -33,7 +33,6 @@
           }
       }
       _numOfChosen = 0;
-      _action = nil;
     }
     return self;
 }
@@ -108,7 +107,6 @@ static const int COST_TO_CHOOSE = 1;
       [actionCards addObject:card];
     }
     self.score -= COST_TO_CHOOSE;
-    self.action = [[CardGameAction alloc] initWithAction:actionString andCards:actionCards andScore:self.score];
     
   }
 }

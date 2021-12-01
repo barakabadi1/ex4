@@ -7,19 +7,16 @@
 
 #import "SetCardGameViewController.h"
 
-#import "HistoryViewController.h"
 
-#import "model/SetCardDeck.h"
-#import "model/SetCard.h"
-#import "model/CardMatchingGame.h"
+#import "SetCardDeck.h"
+#import "SetCard.h"
+#import "CardMatchingGame.h"
 
 @interface SetCardGameViewController ()
 @property (strong,nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UILabel *lastActionLabel;
 
-@property (strong, nonatomic) HistoryViewController *historyController;
 
 @end
 
@@ -27,7 +24,6 @@
 
 
 - (void)viewDidLoad{
-  _historyController = [[HistoryViewController alloc] init];
   [self updateUI:NO];
 }
 
@@ -55,33 +51,9 @@
   }
   
   self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
-  self.lastActionLabel.attributedText = [self lastActionTitle];
 
-  if (isReset){
-    self.historyController = [[HistoryViewController alloc] init];
-  }else if(self.game.action){
-    [self saveHistory:[self lastActionTitle] withScore:self.game.score];
-  }
 }
 
-- (NSAttributedString *)lastActionTitle{
-  if (!self.game.action) {
-    return [[NSAttributedString alloc] initWithString:@"Press any card to start the game"];
-  }
-  NSMutableAttributedString * title = [[NSMutableAttributedString alloc] initWithString:[self.game.action.action stringByAppendingString:@" :"]];
-  
-  for (SetCard *card in self.game.action.cards) {
-    [title appendAttributedString:[self textOfCard:card]];
-    [title appendAttributedString: [[NSAttributedString alloc] initWithString:@", "]];
-  }
-  
-  return title;
-  
-}
-
-- (void)saveHistory:(NSAttributedString *)action withScore:(NSInteger)score{
-  [self.historyController addActionToHistory:action withScore:score];
-}
 
 - (UIColor *)backgroundColorForCard:(Card *)card{
   return card.chosen ? [UIColor lightGrayColor] : [UIColor whiteColor];

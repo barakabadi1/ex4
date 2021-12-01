@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "Deck.h"
 #import "Card.h"
-#import "../utils/CardGameAction.h"
 
 @interface CardMatchingGame : NSObject
 
@@ -21,5 +20,4 @@
 -(Card *)cardAtIndex:(NSUInteger) index;
 
 @property (nonatomic,readonly) NSInteger score;
-@property (strong,nonatomic) CardGameAction *action;
 @end
