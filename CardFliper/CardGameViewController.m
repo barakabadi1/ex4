@@ -9,6 +9,7 @@
 
 #import "Deck.h"
 #import "CardMatchingGame.h"
+#import "PlayingCardView.h"
 
 
 
@@ -19,13 +20,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameMode;
+@property (weak, nonatomic) IBOutlet UIView *CardDisplayAreaView;
 
+@property (weak, nonatomic) IBOutlet PlayingCardView *playingCardView;
 
 
 @end
 
 @implementation CardGameViewController
 
+- (IBAction)tapOnCard:(UITapGestureRecognizer *)sender {
+  self.playingCardView.faceUp = !self.playingCardView.faceUp;
+}
 
 - (void)viewDidLoad{
   [self updateUI:NO];
@@ -70,7 +76,7 @@
   }
   self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
   self.gameMode.enabled = isReset;
-  
+
 
 }
 

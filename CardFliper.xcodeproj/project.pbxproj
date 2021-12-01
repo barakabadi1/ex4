@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25062567275777AD008F34F1 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 25062566275777AD008F34F1 /* Grid.m */; };
+		2506256A27577DB9008F34F1 /* PlayingCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2506256927577DB9008F34F1 /* PlayingCardView.m */; };
 		255096722742B49700C87B92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096712742B49700C87B92 /* AppDelegate.m */; };
 		255096752742B49700C87B92 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096742742B49700C87B92 /* SceneDelegate.m */; };
 		255096782742B49700C87B92 /* CardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255096772742B49700C87B92 /* CardGameViewController.m */; };
@@ -49,6 +50,8 @@
 /* Begin PBXFileReference section */
 		25062565275777AD008F34F1 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		25062566275777AD008F34F1 /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
+		2506256827577DB9008F34F1 /* PlayingCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayingCardView.h; sourceTree = "<group>"; };
+		2506256927577DB9008F34F1 /* PlayingCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingCardView.m; sourceTree = "<group>"; };
 		2550966D2742B49700C87B92 /* CardFliper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardFliper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		255096702742B49700C87B92 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		255096712742B49700C87B92 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				2564D8DA274CF290005F3ACE /* SetCardGameViewController.h */,
 				2564D8DB274CF290005F3ACE /* SetCardGameViewController.m */,
 				255096792742B49700C87B92 /* Main.storyboard */,
+				2506256827577DB9008F34F1 /* PlayingCardView.h */,
+				2506256927577DB9008F34F1 /* PlayingCardView.m */,
 				2550967C2742B49A00C87B92 /* Assets.xcassets */,
 				2550967E2742B49A00C87B92 /* LaunchScreen.storyboard */,
 				255096812742B49A00C87B92 /* Info.plist */,
@@ -328,6 +333,7 @@
 				255096782742B49700C87B92 /* CardGameViewController.m in Sources */,
 				2564D8DF274CF629005F3ACE /* SetCard.m in Sources */,
 				25062567275777AD008F34F1 /* Grid.m in Sources */,
+				2506256A27577DB9008F34F1 /* PlayingCardView.m in Sources */,
 				255096722742B49700C87B92 /* AppDelegate.m in Sources */,
 				2564D8D9274CEE35005F3ACE /* PlayingCardGameViewController.m in Sources */,
 				255096C32744019C00C87B92 /* CardMatchingGame.m in Sources */,
