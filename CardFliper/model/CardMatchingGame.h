@@ -11,13 +11,21 @@
 
 @interface CardMatchingGame : NSObject
 
--(instancetype) initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck;
--(instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck inMatchMode:(NSInteger)matchMode;
+- (instancetype) initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck;
 
-
--(void)chooseCardAtIndex:(NSUInteger) index;
-
--(Card *)cardAtIndex:(NSUInteger) index;
+- (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck inMatchMode:(NSInteger)matchMode;
 
 @property (nonatomic,readonly) NSInteger score;
+
+
+- (void)chooseCardAtIndex:(NSUInteger) index;
+
+- (Card *)cardAtIndex:(NSUInteger) index;
+
+- (Card *)drawNewCardFromDeck;
+
+- (NSUInteger)getNumberOfCardsInGame;
+
+
+
 @end
