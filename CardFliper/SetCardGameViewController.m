@@ -40,6 +40,10 @@
   return 0.7;
 }
 
+-(NSUInteger)amountOfCardsToAdd{
+  return 3;
+}
+
 - (UIView *)createViewOfCard:(Card *)card inFrame:(CGRect)frame {
   return nil;
 }

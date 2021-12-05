@@ -18,11 +18,13 @@
 @property (nonatomic,readonly) NSInteger score;
 
 
-- (void)chooseCardAtIndex:(NSUInteger) index;
+- (void)chooseCardAtIndex:(NSUInteger)index;
 
-- (Card *)cardAtIndex:(NSUInteger) index;
+- (Card *)cardAtIndex:(NSUInteger)index;
 
-- (Card *)drawNewCardFromDeck;
+- (NSArray *)drawNewCardsFromDeck:(NSUInteger)count;
+
+- (NSArray *)getIndexesOfMatchedCards;
 
 - (NSUInteger)getNumberOfCardsInGame;
 

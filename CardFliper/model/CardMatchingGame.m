@@ -20,8 +20,6 @@
 
 @property (strong, nonatomic) Deck *deck;
 
-@property (nonatomic) NSUInteger numOfCardsInGame;
-
 @end
 
 @implementation CardMatchingGame
@@ -33,7 +31,6 @@
       _deck = deck;
       _cards = [[NSMutableArray alloc]init];
       _matchMode = matchMode;
-      _numOfCardsInGame = count;
       
       for (int i =0; i<count; i++) {
           Card *card = [deck drawRandomCard];
@@ -55,16 +52,27 @@
 }
 
 - (NSUInteger)getNumberOfCardsInGame {
-  return self.numOfCardsInGame;
+  NSUInteger count = 0;
+  for (Card *card in self.cards) {
+    if (!card.matched) {
+      count++;
+    }
+  }
+  return count;
 }
 
 
-- (Card *)drawNewCardFromDeck {
-  Card *card = [self.deck drawRandomCard];
-  if (card) {
+- (NSArray *)drawNewCardsFromDeck:(NSUInteger)count {
+  NSMutableArray *addedCards = [[NSMutableArray alloc] init];
+  for (int i = 0; i < count; i++) {
+    Card *card = [self.deck drawRandomCard];
+    if (card) {
       [self.cards addObject:card];
+      [addedCards addObject:card];
+    }
   }
-  return card;
+  return addedCards;
+
 }
 
 - (Card *)cardAtIndex:(NSUInteger)index{
@@ -100,7 +108,6 @@ static const int COST_TO_CHOOSE = 1;
         }
         card.matched = YES;
         _numOfChosen = 0;
-        _numOfCardsInGame -= self.matchMode;
 
       }else{ // match not found
         self.score -=MISMATCH_PENALTY;
@@ -117,6 +124,16 @@ static const int COST_TO_CHOOSE = 1;
     self.score -= COST_TO_CHOOSE;
     
   }
+}
+
+- (NSArray *)getIndexesOfMatchedCards {
+  NSMutableArray *matchedIndexes = [[NSMutableArray alloc] init];
+  for (int i = 0; i < self.cards.count; i++) {
+    if (self.cards[i].matched) {
+      [matchedIndexes addObject:[NSNumber numberWithInt:i]];
+    }
+  }
+  return matchedIndexes;
 }
 
 

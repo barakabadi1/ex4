@@ -30,11 +30,15 @@
 }
 
 - (BOOL)addCardsAfterMatched {
-  return NO;
+  return YES;
 }
 
 - (CGFloat)getCardRatio {
   return 0.7;
+}
+
+-(NSUInteger)amountOfCardsToAdd{
+  return 2;
 }
 
 - (UIView *)createViewOfCard:(Card *)card inFrame:(CGRect)frame{
@@ -60,7 +64,7 @@
                         duration:0.5
                          options:UIViewAnimationOptionTransitionFlipFromRight
                       animations:^{ pCardView.faceUp = pCard.chosen; }
-                      completion:NULL];
+                      completion:nil];
     }else{
       pCardView.faceUp = pCard.chosen;
     }
