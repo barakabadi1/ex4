@@ -60,22 +60,20 @@
   CGRect frame;
   for (int row = 0; row < self.grid.rowCount; row++) {
     for (int col = 0; col < self.grid.columnCount; col++) {
-      
       Card *card = [self.game cardAtIndex:cardIndex];
-
       frame = [self.grid frameOfCellAtRow:row inColumn:col];
       
-      UIView *cardView = [self createViewOfCard:card inFrame:frame];
-      [self.cardsViews addObject:cardView];
-      
+      if (card) {
+        UIView *cardView = [self createViewOfCard:card inFrame:frame];
+        [self.cardsViews addObject:cardView];
+      }
       cardIndex++;
     }
   }
   
 }
 
-
--(void) updateUI {
+- (void) updateUI {
   for(int i = 0; i < self.cardsViews.count; i++){
     Card *card = [self.game cardAtIndex:i];
     UIView *cardView = self.cardsViews[i];
@@ -86,7 +84,6 @@
   }
   self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
 }
-
 
 - (void)resetGame {
     self.game = nil;
@@ -100,8 +97,9 @@
 - (IBAction)tapOnCard:(UITapGestureRecognizer *)sender {
   CGPoint tapLocation = [sender locationInView:self.cardsPlaceHolderView];
   NSInteger index = -1;
+  UIView *cardView;
   for (int i = 0; i<self.cardsViews.count; i++) {
-    UIView *cardView = self.cardsViews[i];
+    cardView = self.cardsViews[i];
     if (CGRectContainsPoint(cardView.frame, tapLocation)) {
       index = i;
       break;
