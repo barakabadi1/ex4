@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Syb-b9-Sak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uSx-Zr-j1v">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -8,163 +8,156 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Playing Card Game View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="PlayingCardGameViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="r1I-uB-yDG">
-                                <rect key="frame" x="228" y="609" width="131" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="2 cards"/>
-                                    <segment title="3 cards"/>
-                                </segments>
-                                <connections>
-                                    <action selector="touchGameMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="G9U-ib-Kdo"/>
-                                </connections>
-                            </segmentedControl>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNi-i2-rRs" customClass="PlayingCardView">
-                                <rect key="frame" x="53" y="83" width="86" height="144"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="GCb-8D-yvo" appends="YES" id="p4y-KX-cve"/>
-                                </connections>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Em-qc-21D">
-                                <rect key="frame" x="16" y="613" width="73" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Restart">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="onClickResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2N-i5-G51"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4y-QS-UWM">
-                                <rect key="frame" x="122" y="621" width="131" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="r1I-uB-yDG"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="lkB-ru-j8Y">
-                        <barButtonItem key="leftBarButtonItem" title="Set Game" id="cUF-U0-fZo">
-                            <connections>
-                                <segue destination="B39-14-b99" kind="show" id="gAx-7P-Ey8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="gameMode" destination="r1I-uB-yDG" id="yD5-gG-M9o"/>
-                        <outlet property="playingCardView" destination="qNi-i2-rRs" id="6Di-em-nd1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="GCb-8D-yvo">
-                    <connections>
-                        <action selector="tapOnCard:" destination="BYZ-38-t0r" id="FV9-IG-koR"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="-420" y="-385.45727136431788"/>
-        </scene>
-        <!--Set Card Game View Controller-->
-        <scene sceneID="ezD-hD-pmt">
-            <objects>
-                <viewController id="B39-14-b99" customClass="SetCardGameViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aqE-J2-NfQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9k-TP-kjS">
-                                <rect key="frame" x="16" y="608" width="73" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Restart">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="onClickResetButton:" destination="B39-14-b99" eventType="touchUpInside" id="eda-9Y-6e9"/>
-                                </connections>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BEF-Q4-wOp">
-                                <rect key="frame" x="228" y="609" width="131" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="2 cards"/>
-                                    <segment title="3 cards"/>
-                                </segments>
-                                <connections>
-                                    <action selector="touchGameMode:" destination="B39-14-b99" eventType="valueChanged" id="dN7-jb-aKL"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ru-Yr-k7i">
-                                <rect key="frame" x="122" y="616" width="131" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="t5o-dm-jO0"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="BEF-Q4-wOp"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="Vym-YX-va1"/>
-                    <connections>
-                        <outlet property="gameMode" destination="BEF-Q4-wOp" id="7pF-Ml-nXk"/>
-                        <outlet property="resetButton" destination="Q9k-TP-kjS" id="Hxx-Mx-lHo"/>
-                        <outlet property="scoreLabel" destination="8Ru-Yr-k7i" id="dpW-dp-hCs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhs-eB-ltJ" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="352.80000000000001" y="-385.45727136431788"/>
-        </scene>
         <!--Navigation Controller-->
-        <scene sceneID="W9m-gp-ZiN">
+        <scene sceneID="d0Z-qH-gTS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Syb-b9-Sak" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qbd-lj-Ivn">
+                <navigationController id="uSx-Zr-j1v" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u7p-Ey-iXo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hu1-GG-evm"/>
+                        <segue destination="6IX-4w-1g3" kind="relationship" relationship="rootViewController" id="hhN-re-mgz"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="myl-KL-dP7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PdZ-fT-69C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1199" y="-385"/>
+            <point key="canvasLocation" x="-1249" y="417"/>
+        </scene>
+        <!--Playing Card Game View Controller-->
+        <scene sceneID="LeM-aH-5WR">
+            <objects>
+                <viewController id="6IX-4w-1g3" customClass="PlayingCardGameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0IV-fW-o4z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5N5-eH-Orx">
+                                <rect key="frame" x="16" y="596" width="119" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="EtW-r7-xXa"/>
+                                    <constraint firstAttribute="width" constant="119" id="mXd-Mh-sSK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnJ-cK-Q2C">
+                                <rect key="frame" x="198" y="596" width="161" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50O-Tw-zZQ">
+                                <rect key="frame" x="16" y="44" width="343" height="544"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NYe-8T-rUz" appends="YES" id="Jm5-4u-wRg"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4MQ-es-era"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="50O-Tw-zZQ" firstAttribute="trailing" secondItem="0IV-fW-o4z" secondAttribute="trailingMargin" id="Iac-6v-e2Z"/>
+                            <constraint firstItem="50O-Tw-zZQ" firstAttribute="leading" secondItem="0IV-fW-o4z" secondAttribute="leadingMargin" id="JlI-1n-ntv"/>
+                            <constraint firstItem="50O-Tw-zZQ" firstAttribute="trailing" secondItem="BnJ-cK-Q2C" secondAttribute="trailing" id="Wtt-vP-VzZ"/>
+                            <constraint firstAttribute="bottom" secondItem="5N5-eH-Orx" secondAttribute="bottom" constant="20" symbolic="YES" id="Z56-vA-SY0"/>
+                            <constraint firstItem="50O-Tw-zZQ" firstAttribute="leading" secondItem="5N5-eH-Orx" secondAttribute="leading" id="eIp-hI-SSF"/>
+                            <constraint firstItem="5N5-eH-Orx" firstAttribute="top" secondItem="50O-Tw-zZQ" secondAttribute="bottom" constant="8" symbolic="YES" id="gsj-RO-EiZ"/>
+                            <constraint firstItem="5N5-eH-Orx" firstAttribute="top" secondItem="BnJ-cK-Q2C" secondAttribute="top" id="iEZ-8C-E9g"/>
+                            <constraint firstItem="BnJ-cK-Q2C" firstAttribute="leading" secondItem="5N5-eH-Orx" secondAttribute="trailing" constant="63" id="pAj-Sy-S5T"/>
+                            <constraint firstItem="5N5-eH-Orx" firstAttribute="bottom" secondItem="BnJ-cK-Q2C" secondAttribute="bottom" id="rCa-rx-FcQ"/>
+                            <constraint firstItem="50O-Tw-zZQ" firstAttribute="top" secondItem="4MQ-es-era" secondAttribute="top" id="rrA-64-bCI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="901-e1-ZGX">
+                        <barButtonItem key="rightBarButtonItem" title="Set Game" id="9fu-he-1pH">
+                            <connections>
+                                <segue destination="pco-LX-ODb" kind="show" id="dhr-mW-tVV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cardsPlaceHolderView" destination="50O-Tw-zZQ" id="1fO-0y-tRt"/>
+                        <outlet property="resetButton" destination="5N5-eH-Orx" id="Q8I-Jl-Zbp"/>
+                        <outlet property="scoreLabel" destination="BnJ-cK-Q2C" id="pXB-tt-MHH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9aB-Dn-JSU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NYe-8T-rUz">
+                    <connections>
+                        <action selector="tapOnCard:" destination="6IX-4w-1g3" id="FGp-9K-RV5"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-490" y="417"/>
+        </scene>
+        <!--Set Card Game View Controller-->
+        <scene sceneID="kTr-1x-KNJ">
+            <objects>
+                <viewController id="pco-LX-ODb" customClass="SetCardGameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IRY-fE-fbd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouh-zO-D7p">
+                                <rect key="frame" x="16" y="596" width="119" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="W4E-XV-iLf"/>
+                                    <constraint firstAttribute="width" constant="119" id="lIs-rP-3CO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7j-DE-Kb3">
+                                <rect key="frame" x="198" y="596" width="161" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdL-R3-55M">
+                                <rect key="frame" x="16" y="44" width="343" height="544"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jmF-ad-xxp" appends="YES" id="3X0-pR-KWc"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WU2-l6-gHJ"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ouh-zO-D7p" secondAttribute="bottom" constant="20" symbolic="YES" id="1M0-vx-bdZ"/>
+                            <constraint firstItem="fdL-R3-55M" firstAttribute="top" secondItem="WU2-l6-gHJ" secondAttribute="top" id="1gz-Uj-lag"/>
+                            <constraint firstItem="ouh-zO-D7p" firstAttribute="top" secondItem="h7j-DE-Kb3" secondAttribute="top" id="2DQ-e1-LKK"/>
+                            <constraint firstItem="fdL-R3-55M" firstAttribute="trailing" secondItem="h7j-DE-Kb3" secondAttribute="trailing" id="Omr-7U-yal"/>
+                            <constraint firstItem="ouh-zO-D7p" firstAttribute="top" secondItem="fdL-R3-55M" secondAttribute="bottom" constant="8" symbolic="YES" id="fJ6-P4-YlA"/>
+                            <constraint firstItem="fdL-R3-55M" firstAttribute="trailing" secondItem="IRY-fE-fbd" secondAttribute="trailingMargin" id="i7C-5d-86z"/>
+                            <constraint firstItem="ouh-zO-D7p" firstAttribute="bottom" secondItem="h7j-DE-Kb3" secondAttribute="bottom" id="jgR-w0-5kg"/>
+                            <constraint firstItem="fdL-R3-55M" firstAttribute="leading" secondItem="ouh-zO-D7p" secondAttribute="leading" id="wee-XF-Oai"/>
+                            <constraint firstItem="h7j-DE-Kb3" firstAttribute="leading" secondItem="ouh-zO-D7p" secondAttribute="trailing" constant="63" id="wpC-V1-1x0"/>
+                            <constraint firstItem="fdL-R3-55M" firstAttribute="leading" secondItem="IRY-fE-fbd" secondAttribute="leadingMargin" id="xOg-DZ-5fX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kUf-m5-eKG"/>
+                    <connections>
+                        <outlet property="cardsPlaceHolderView" destination="fdL-R3-55M" id="cDU-ef-T0g"/>
+                        <outlet property="resetButton" destination="ouh-zO-D7p" id="EWC-As-H0K"/>
+                        <outlet property="scoreLabel" destination="h7j-DE-Kb3" id="h8x-QJ-Z2j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPi-aW-NHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jmF-ad-xxp">
+                    <connections>
+                        <action selector="tapOnCard:" destination="pco-LX-ODb" id="nB8-Oy-TIA"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="270" y="417"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
