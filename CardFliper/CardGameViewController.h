@@ -23,6 +23,8 @@
 
 - (CGFloat)getCardRatio; //abstract
 
+-(NSUInteger)amountOfCardsToAdd;
+
 - (UIView *)createViewOfCard:(Card *)card inFrame:(CGRect)frame; //abstract
 
 - (void)updateCardView:(UIView *)cardView usingCard:(Card *)card animation:(BOOL)toAnimate; //abstract
