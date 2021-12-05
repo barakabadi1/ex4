@@ -49,11 +49,23 @@
 
 
 - (void)updateCardView:(UIView *)cardView usingCard:(Card *)card animation:(BOOL)toAnimate {
-  PlayingCard *pCard = (PlayingCard *)card;
-  PlayingCardView *pCardView = (PlayingCardView *)cardView;
-  pCardView.suit = pCard.suit;
-  pCardView.rank = pCard.rank;
-  pCardView.faceUp = card.chosen;
+  if ([card isKindOfClass:[PlayingCard class]]) {
+    PlayingCard *pCard = (PlayingCard *)card;
+    PlayingCardView *pCardView = (PlayingCardView *)cardView;
+    pCardView.suit = pCard.suit;
+    pCardView.rank = pCard.rank;
+    
+    if (toAnimate && pCardView.faceUp != pCard.chosen) {
+      [UIView transitionWithView:pCardView
+                        duration:0.5
+                         options:UIViewAnimationOptionTransitionFlipFromRight
+                      animations:^{ pCardView.faceUp = pCard.chosen; }
+                      completion:NULL];
+    }else{
+      pCardView.faceUp = pCard.chosen;
+    }
+  }
+
 }
 
 @end
