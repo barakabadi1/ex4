@@ -13,25 +13,11 @@
 #import "CardMatchingGame.h"
 
 @interface SetCardGameViewController ()
-@property (strong,nonatomic) CardMatchingGame *game;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UIView *CardDisplayAreaView;
-
 
 @end
 
 @implementation SetCardGameViewController
 
-
-- (void)viewDidLoad{
-  [self updateUI:NO];
-}
-
-- (CardMatchingGame *)game{
-    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[self createDeck] inMatchMode:[self getMatchMode]];
-    return _game;
-}
 
 - (Deck *)createDeck{
   return [[SetCardDeck alloc] init];
@@ -41,19 +27,40 @@
   return 3;
 }
 
--(void) updateUI:(BOOL)isReset{
-  for (UIButton *cardButton in self.cardButtons) {
-    NSUInteger cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
-    SetCard *card = (SetCard *)[self.game cardAtIndex:cardButtonIndex];
-   
-    [cardButton setBackgroundColor:[self backgroundColorForCard:card]];
-    
-    [cardButton setAttributedTitle:[self textOfCard:card] forState:UIControlStateNormal];
-  }
-  
-  self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
-
+- (NSUInteger)getInitCardCount {
+  return 12;
 }
+
+
+- (BOOL)addCardsAfterMatched {
+  return YES;
+}
+
+- (CGFloat)getCardRatio {
+  return 0.7;
+}
+
+- (UIView *)createViewOfCard:(Card *)card inFrame:(CGRect)frame {
+  return nil;
+}
+
+- (void)updateCardView:(UIView *)cardView usingCard:(Card *)card animation:(BOOL)toAnimate{
+  
+}
+
+//-(void) updateUI:(BOOL)isReset{
+//  for (UIButton *cardButton in self.cardButtons) {
+//    NSUInteger cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
+//    SetCard *card = (SetCard *)[self.game cardAtIndex:cardButtonIndex];
+//   
+//    [cardButton setBackgroundColor:[self backgroundColorForCard:card]];
+//    
+//    [cardButton setAttributedTitle:[self textOfCard:card] forState:UIControlStateNormal];
+//  }
+//  
+//  self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
+//
+//}
 
 
 - (UIColor *)backgroundColorForCard:(Card *)card{
