@@ -61,6 +61,10 @@
   return count;
 }
 
+- (NSUInteger)getNumberOfCardsInDeck {
+  return [self.deck getNumberOfCardsInDeck];
+}
+
 
 - (NSArray *)drawNewCardsFromDeck:(NSUInteger)count {
   NSMutableArray *addedCards = [[NSMutableArray alloc] init];

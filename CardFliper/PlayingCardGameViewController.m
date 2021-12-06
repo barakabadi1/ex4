@@ -30,7 +30,7 @@
 }
 
 - (BOOL)addCardsAfterMatched {
-  return YES;
+  return NO;
 }
 
 - (CGFloat)getCardRatio {
@@ -38,15 +38,18 @@
 }
 
 -(NSUInteger)amountOfCardsToAdd{
-  return 2;
+  return 0;
 }
 
 - (UIView *)createViewOfCard:(Card *)card inFrame:(CGRect)frame{
-  PlayingCard *pCard = (PlayingCard *)card;
-  PlayingCardView *pCardView = [[PlayingCardView alloc] initWithFrame:frame];
-  pCardView.suit = pCard.suit;
-  pCardView.rank = pCard.rank;
-  pCardView.faceUp = card.chosen;
+  
+  PlayingCardView *pCardView = nil;if ([card isKindOfClass:[PlayingCard class]]) {
+    PlayingCard *pCard = (PlayingCard *)card;
+    pCardView = [[PlayingCardView alloc] initWithFrame:frame];
+    pCardView.suit = pCard.suit;
+    pCardView.rank = pCard.rank;
+    pCardView.faceUp = card.chosen;
+  }
   
   return pCardView;
 }

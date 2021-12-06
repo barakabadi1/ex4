@@ -150,6 +150,7 @@
   if (self = [super initWithFrame:frame]) {
     // Init code
     _faceCardScaleFactor = DEAFULT_FACE_CARD_SCALE_FACTOR;
+    [self setup];
 
   }
   return self;

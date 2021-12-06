@@ -17,7 +17,6 @@
 
 @property (nonatomic,readonly) NSInteger score;
 
-
 - (void)chooseCardAtIndex:(NSUInteger)index;
 
 - (Card *)cardAtIndex:(NSUInteger)index;
@@ -27,6 +26,8 @@
 - (NSArray *)getIndexesOfMatchedCards;
 
 - (NSUInteger)getNumberOfCardsInGame;
+
+- (NSUInteger)getNumberOfCardsInDeck;
 
 
 

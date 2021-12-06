@@ -10,9 +10,11 @@
 
 @interface Deck : NSObject
 
--(void)addCard: (Card * )card atTop:(BOOL)atTop;
--(void)addCard: (Card * )card;
+- (void)addCard: (Card * )card atTop:(BOOL)atTop;
+- (void)addCard: (Card * )card;
 
--(Card *)drawRandomCard;
+- (Card *)drawRandomCard;
+
+- (NSUInteger)getNumberOfCardsInDeck;
 
 @end

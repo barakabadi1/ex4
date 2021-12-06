@@ -11,6 +11,7 @@
 #import "SetCardDeck.h"
 #import "SetCard.h"
 #import "CardMatchingGame.h"
+#import "SetCardView.h"
 
 @interface SetCardGameViewController ()
 
@@ -45,11 +46,43 @@
 }
 
 - (UIView *)createViewOfCard:(Card *)card inFrame:(CGRect)frame {
-  return nil;
+
+  SetCardView *sCardView = nil;
+  if ([card isKindOfClass:[SetCard class]]) {
+    SetCard *sCard = (SetCard *)card;
+    sCardView = [[SetCardView alloc] initWithFrame:frame];
+    sCardView.numOfSymbol = sCard.numOfSymbol;
+    sCardView.color = sCard.color;
+    sCardView.shapeIndex = sCard.shapeIndex;
+    sCardView.shading = sCard.shading;
+    
+    sCardView.faceUp = card.chosen;
+  }
+  
+  return sCardView;
+  
 }
 
 - (void)updateCardView:(UIView *)cardView usingCard:(Card *)card animation:(BOOL)toAnimate{
   
+  if ([card isKindOfClass:[SetCard class]]) {
+    SetCard *sCard = (SetCard *)card;
+    SetCardView *sCardView = (SetCardView *)cardView;
+    sCardView.numOfSymbol = sCard.numOfSymbol;
+    sCardView.color = sCard.color;
+    sCardView.shapeIndex = sCard.shapeIndex;
+    sCardView.shading = sCard.shading;
+    
+    if (toAnimate && sCardView.faceUp != sCard.chosen) {
+      [UIView transitionWithView:sCardView
+                        duration:0.5
+                         options:UIViewAnimationOptionCurveLinear
+                      animations:^{ sCardView.faceUp = sCard.chosen; }
+                      completion:nil];
+    }else{
+      sCardView.faceUp = sCard.chosen;
+    }
+  }
 }
 
 //-(void) updateUI:(BOOL)isReset{

@@ -41,4 +41,9 @@
     return randomCard;
 }
 
+
+- (NSUInteger)getNumberOfCardsInDeck {
+  return self.cards.count;
+}
+
 @end

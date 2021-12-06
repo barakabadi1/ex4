@@ -16,7 +16,7 @@
 #import "PlayingCardView.h"
 
 
-@interface CardGameViewController ()
+@interface CardGameViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) CardMatchingGame *game;
 
@@ -26,9 +26,15 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
-@property (weak, nonatomic) IBOutlet UIView *cardsPlaceHolderView;
+@property (strong, nonatomic) IBOutlet UIView *cardsPlaceHolderView;
+
+@property (weak, nonatomic) IBOutlet UIButton *addCardsButton;
 
 @property (strong, nonatomic) Grid *grid;
+
+@property (nonatomic) BOOL isViewsPinched;
+
+
 
 @end
 
@@ -38,8 +44,13 @@
 
 - (void)setupNewCardGame {
   _cardsViews = [[NSMutableArray alloc] init];
+
   _game = [[CardMatchingGame alloc] initWithCardCount:[self getInitCardCount] usingDeck:[self createDeck] inMatchMode:[self getMatchMode]];
   _grid = [[Grid alloc] init];
+  
+  _isViewsPinched = NO;
+  
+  _addCardsButton.hidden = ![self addCardsAfterMatched];
 
 }
 
@@ -48,17 +59,6 @@
   _grid.minimumNumberOfCells = [self.game getNumberOfCardsInGame];
   _grid.cellAspectRatio = [self getCardRatio];
 }
-
-- (void)viewDidLoad{
-  
-  [self setupNewCardGame];
-  [self setupGridLayout];
-  
-  [self initCardsViewInPlaceHolder];
-  [self updateUI];
-  
-}
-
 
 - (void)initCardsViewInPlaceHolder {
   if (!_cardsViews) {
@@ -143,28 +143,71 @@
 
   }
   self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
+
+  self.addCardsButton.enabled = [self.game getNumberOfCardsInDeck] > 0;
+
 }
 
 
 
 - (IBAction)tapOnCard:(UITapGestureRecognizer *)sender {
-  
+
   //todo - add behaivior to the pinched view
-  
-  CGPoint tapLocation = [sender locationInView:self.cardsPlaceHolderView];
-  NSInteger index = -1;
-  UIView *cardView;
-  for (int i = 0; i<self.cardsViews.count; i++) {
-    cardView = self.cardsViews[i];
-    if (cardView.alpha != 0 && CGRectContainsPoint(cardView.frame, tapLocation)) {
-      index = i;
-      break;
+  if (!self.isViewsPinched) {
+    CGPoint tapLocation = [sender locationInView:self.cardsPlaceHolderView];
+    NSInteger index = -1;
+    UIView *cardView;
+    for (int i = 0; i<self.cardsViews.count; i++) {
+      cardView = self.cardsViews[i];
+      if (cardView.alpha != 0 && CGRectContainsPoint(cardView.frame, tapLocation)) {
+        index = i;
+        break;
+      }
     }
+    if (index > -1) {
+      [self.game chooseCardAtIndex:index];
+      [self updateUI];
+    }
+  } else {
+    self.isViewsPinched = NO;
+    [self redrawCardsInPlaceHolder];
   }
-  if (index > -1) {
-    [self.game chooseCardAtIndex:index];
-    [self updateUI];
+
+}
+
+- (IBAction)pinchCardsViews:(UIPinchGestureRecognizer *)sender {
+  CGPoint gesturePoint = [sender locationInView:self.cardsPlaceHolderView];
+  self.isViewsPinched = YES;
+  [self setFrameForCardsViewsInPinchedMode:gesturePoint];
+
+}
+
+#define CARD_FRAME_OFFSET 0.3
+
+- (void)setFrameForCardsViewsInPinchedMode:(CGPoint)gesturePoint {
+  int index = 0;
+  for (UIView *view in [self.cardsPlaceHolderView subviews]) {
+    
+    [UIView animateWithDuration:0.2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{ view.frame = CGRectMake(
+                                                           gesturePoint.x - index * CARD_FRAME_OFFSET,
+                                                           gesturePoint.y - index * CARD_FRAME_OFFSET,
+                                                           view.frame.size.width,
+                                                           view.frame.size.height); }
+                     completion:nil];
+    index++;
   }
+}
+
+- (IBAction)panCardsViews:(UIPanGestureRecognizer *)sender {
+
+  if (self.isViewsPinched) {
+    CGPoint gesturePoint =[sender locationInView:self.cardsPlaceHolderView];
+    [self setFrameForCardsViewsInPinchedMode:gesturePoint];
+  }
+
 }
 
 
@@ -204,7 +247,19 @@
     [self.cardsViews addObject:cardView];
     [self.cardsPlaceHolderView addSubview:cardView];
   }
+  
+  if (![self.game getNumberOfCardsInDeck]) {
+    self.addCardsButton.enabled = NO;
+  }
     
+}
+
+
+- (IBAction)addCardButtonPress:(UIButton *)sender {
+  
+  if (self.addCardsAfterMatched) {
+    [self addCardsToGame];
+  }
 }
 
 
@@ -229,10 +284,7 @@
   self.game = nil;
   self.cardsViews = nil;
   
-  [self setupNewCardGame];
-  [self setupGridLayout];
-  [self initCardsViewInPlaceHolder];
-  [self updateUI];
+  [self initCardGame];
   
 }
 
@@ -278,6 +330,29 @@
 - (void)viewDidLayoutSubviews {
   [super viewDidLayoutSubviews];
   [self redrawCardsInPlaceHolder];
+}
+
+- (void)initCardGame {
+  [self setupNewCardGame];
+  [self setupGridLayout];
+  
+  [self initCardsViewInPlaceHolder];
+  [self updateUI];
+}
+
+- (void)viewDidLoad{
+  
+  [super viewDidLoad];
+  
+  [self initCardGame];
+  
+//  [self.cardsPlaceHolderView addGestureRecognizer:[[UIPinchGestureRecognizer alloc]
+//                                                   initWithTarget:self.cardsPlaceHolderView
+//                                                   action:@selector(pinchHolderView:)]];
+//  [self.cardsPlaceHolderView addGestureRecognizer:[[UIPanGestureRecognizer alloc]
+//                                                   initWithTarget:self.cardsPlaceHolderView
+//                                                   action:@selector(panHolderView:)]];
+  
 }
 
 @end
