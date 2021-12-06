@@ -16,9 +16,7 @@ static const int COLOR_AMOUNT = 3;
 static const int SHADING_AMOUNT = 3;
 
 - (instancetype)init{
-  
   if (self=[super init]) {
-    
     for (int symbol = 0; symbol < SYMBOL_AMOUNT; symbol++ ) {
       for (int shape = 0; shape < SHAPE_AMOUNT; shape++) {
         for (int color = 0; color < COLOR_AMOUNT; color++) {
@@ -33,9 +31,7 @@ static const int SHADING_AMOUNT = 3;
         }
       }
     }
-    
   }
-  
   return self;
 }
 

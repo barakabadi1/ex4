@@ -11,8 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PlayingCardView : UIView
 
+// the rank of the card
 @property (nonatomic) NSUInteger rank;
-@property (strong,nonatomic) NSString *suit;
+
+// the suit of the card
+@property (strong, nonatomic) NSString *suit;
+
+// mark if the card face up
 @property (nonatomic) BOOL faceUp;
 
 @end

@@ -7,12 +7,11 @@
 
 #import "CardGameViewController.h"
 
-#import "Deck.h"
-#import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
+#import "Deck.h"
 #import "Grid.h"
-
 #import "PlayingCard.h"
+#import "PlayingCardDeck.h"
 #import "PlayingCardView.h"
 
 
@@ -51,7 +50,6 @@
   _isViewsPinched = NO;
   
   _addCardsButton.hidden = ![self addCardsAfterMatched];
-
 }
 
 - (void)setupGridLayout {
@@ -128,7 +126,7 @@
 }
 
 - (void) updateUI {
-  for(int i = 0; i < self.cardsViews.count; i++){
+  for (int i = 0; i < self.cardsViews.count; i++) {
     Card *card = [self.game cardAtIndex:i];
     UIView *cardView = self.cardsViews[i];
     
@@ -137,15 +135,12 @@
         [self removeCardsFromGrid];
       } else {
         [self updateCardView:cardView usingCard:card animation:YES];
-         // todo - move to other method with animation of start
       }
     }
 
   }
   self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld",self.game.score];
-
   self.addCardsButton.enabled = [self.game getNumberOfCardsInDeck] > 0;
-
 }
 
 
@@ -179,7 +174,6 @@
   CGPoint gesturePoint = [sender locationInView:self.cardsPlaceHolderView];
   self.isViewsPinched = YES;
   [self setFrameForCardsViewsInPinchedMode:gesturePoint];
-
 }
 
 #define CARD_FRAME_OFFSET 0.3
@@ -202,7 +196,6 @@
 }
 
 - (IBAction)panCardsViews:(UIPanGestureRecognizer *)sender {
-
   if (self.isViewsPinched) {
     CGPoint gesturePoint =[sender locationInView:self.cardsPlaceHolderView];
     [self setFrameForCardsViewsInPinchedMode:gesturePoint];
@@ -263,7 +256,7 @@
 }
 
 
-- (void)removeAllCardsViewsFromPlaceHolder{
+- (void)removeAllCardsViewsFromPlaceHolder {
   for (UIView *view in [self.cardsPlaceHolderView subviews]) {
       [UIView animateWithDuration:0.5
                        animations:^{view.frame = CGRectMake(0.0,
@@ -340,19 +333,11 @@
   [self updateUI];
 }
 
-- (void)viewDidLoad{
+- (void)viewDidLoad {
   
-  [super viewDidLoad];
-  
+  [super viewDidLoad];  
   [self initCardGame];
-  
-//  [self.cardsPlaceHolderView addGestureRecognizer:[[UIPinchGestureRecognizer alloc]
-//                                                   initWithTarget:self.cardsPlaceHolderView
-//                                                   action:@selector(pinchHolderView:)]];
-//  [self.cardsPlaceHolderView addGestureRecognizer:[[UIPanGestureRecognizer alloc]
-//                                                   initWithTarget:self.cardsPlaceHolderView
-//                                                   action:@selector(panHolderView:)]];
-  
+
 }
 
 @end

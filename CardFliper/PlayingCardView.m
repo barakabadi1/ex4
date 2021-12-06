@@ -22,13 +22,13 @@
 @synthesize faceCardScaleFactor = _faceCardScaleFactor;
 
 - (CGFloat)faceCardScaleFactor {
-  if (!_faceCardScaleFactor) { // TODO - remove lazy init
+  if (!_faceCardScaleFactor) {
     _faceCardScaleFactor = DEAFULT_FACE_CARD_SCALE_FACTOR;
   }
   return _faceCardScaleFactor;
 }
 
-- (void)setFaceCardScaleFactor:(CGFloat)faceCardScaleFactor{
+- (void)setFaceCardScaleFactor:(CGFloat)faceCardScaleFactor {
   _faceCardScaleFactor = faceCardScaleFactor;
   [self setNeedsDisplay];
 }
@@ -105,7 +105,7 @@
   
 }
 
-- (NSArray *)rankStrings{
+- (NSArray *)rankStrings {
     return @[@"?",@"A",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"J",@"Q",@"K"][self.rank];
 }
 
@@ -146,12 +146,11 @@
   [self setup];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
     // Init code
     _faceCardScaleFactor = DEAFULT_FACE_CARD_SCALE_FACTOR;
     [self setup];
-
   }
   return self;
 }

@@ -7,9 +7,10 @@
 
 #import "PlayingCardGameViewController.h"
 
+#import "PlayingCard.h"
 #import "PlayingCardDeck.h"
 #import "PlayingCardView.h"
-#import "PlayingCard.h"
+
 
 @interface PlayingCardGameViewController ()
 

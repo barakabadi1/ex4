@@ -13,7 +13,6 @@
 // striped - 1
 //empty - 3
 
-
 - (void)drawRect:(CGRect)rect {
     // Drawing code
   UIBezierPath *roundedRect = [UIBezierPath
@@ -35,7 +34,6 @@
   [self drawCards];
 
 }
-
 
 - (void)drawCards {
   if (self.shapeIndex == 0) { //dimond
@@ -84,11 +82,10 @@
   [self setNeedsDisplay];
 }
 
-- (void)setFaceUp:(BOOL)faceUp{
+- (void)setFaceUp:(BOOL)faceUp {
   _faceUp = faceUp;
   [self setNeedsDisplay];
 }
-
 
 
 #define SYMBOL_SCALE_X 2
@@ -102,9 +99,6 @@
 
 #define Y_OFFSET_FOR_NUMBER_2 2.7
 #define Y_OFFSET_FOR_NUMBER_3 1.7
- 
-
-
 
 - (void)drawSquiggle {
   CGPoint middle = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
@@ -158,7 +152,6 @@
   path.lineWidth = SHAPE_LINEWIDTH;
   
   [self drawAttributesFor:path];
-
 
 }
 
@@ -289,14 +282,9 @@ static void drawStripes (void *info, CGContextRef context) {
 
 - (instancetype)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
-    
     [self setup];
-          
   }
   return self;
 }
-
-
-
 
 @end
