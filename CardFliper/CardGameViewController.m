@@ -113,8 +113,8 @@
       
         newFrame = [self.grid frameOfCellAtRow:row inColumn:col];
         if (!CGRectEqualToRect(cardView.frame, newFrame) && cardViewIndex < self.cardsViews.count) {
-          [UIView animateWithDuration:0.2f
-                                delay:0.0f
+          [UIView animateWithDuration:0.2
+                                delay:0.0
                               options:UIViewAnimationOptionCurveEaseInOut
                            animations:^{ cardView.frame = newFrame; }
                            completion:nil];
@@ -218,10 +218,14 @@
   }
   
   [UIView animateWithDuration:0.5
-                   animations:^{ for (UIView *cardView in cardsViewsToRemove) { cardView.alpha = 0; } }
+                   animations:^{
+    for (UIView *cardView in cardsViewsToRemove) {
+      cardView.alpha = 0;
+      [cardView removeFromSuperview];
+  } }
                    completion:^(BOOL finished){
     if ([self addCardsAfterMatched]) {
-      [self addCardsToGame];
+      [self addCardsToGame:NO];
     }
     [self redrawCardsInPlaceHolder];
   }
@@ -229,7 +233,11 @@
 
 }
 
-- (void)addCardsToGame {
+- (void)addCardsToGame:(BOOL)addedButton {
+  if (!addedButton && [self.cardsPlaceHolderView subviews].count >= [self getInitCardCount]) {
+    return;
+  }
+  
   NSArray *cardsToAdd = [self.game drawNewCardsFromDeck: [self amountOfCardsToAdd]];
     
   for (Card *card in cardsToAdd) {
@@ -251,7 +259,7 @@
 - (IBAction)addCardButtonPress:(UIButton *)sender {
   
   if (self.addCardsAfterMatched) {
-    [self addCardsToGame];
+    [self addCardsToGame:YES];
   }
 }
 
@@ -309,7 +317,7 @@
 
 - (NSUInteger)amountOfCardsToAdd{
   return 0;
-}
+} //abstract
 
 - (UIView *)createViewOfCard:(Card *)card inFrame:(CGRect)frame {
   return nil;
