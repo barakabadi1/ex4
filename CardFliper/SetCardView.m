@@ -181,8 +181,8 @@
 
 - (void)drawAttributesFor:(UIBezierPath *)path {
   NSArray *colors  = @[[UIColor redColor],
-                                   [UIColor greenColor],
-                                   [UIColor purpleColor]];
+                       [UIColor greenColor],
+                       [UIColor purpleColor]];
   UIColor *cardColor = colors[self.color];
   
   [cardColor setStroke];
